@@ -1,27 +1,825 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Deepak Baral - Senior QA Engineer, Automation, API and Performance Testing">
+<title>Deepak Baral | Senior QA Engineer CV</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #14253d;
+  --teal: #138b83;
+  --light-teal: #e8f5f2;
+  --text: #27364a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #e9eef3;
+  color: var(--text);
+  line-height: 1.6;
+  padding: 35px 15px;
+}
+
+.resume {
+  max-width: 1050px;
+  margin: auto;
+  background: var(--white);
+  box-shadow: 0 20px 65px rgba(15, 35, 60, .12);
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.header {
+  background: var(--navy);
+  color: white;
+  padding: 48px 55px 42px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 45px solid rgba(255,255,255,.045);
+  border-radius: 50%;
+  right: -80px;
+  top: -140px;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: #65d6c4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.header h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 43px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+}
+
+.designation {
+  color: #a8e5db;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.header-description {
+  max-width: 700px;
+  color: #c2cedd;
+  font-size: 13px;
+  margin-top: 19px;
+}
+
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 27px;
+  margin-top: 25px;
+  font-size: 12px;
+  color: #d6e1ed;
+}
+
+.contact-bar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-bar a:hover {
+  color: #65d6c4;
+}
+
+/* LAYOUT */
+
+.content {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 38px;
+  padding: 38px 48px 50px;
+}
+
+.main-column,
+.side-column {
+  min-width: 0;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+.section-heading::after {
+  content: "";
+  height: 2px;
+  background: var(--line);
+  flex: 1;
+}
+
+.section-heading span {
+  color: var(--teal);
+}
+
+.summary {
+  color: #526176;
+  font-size: 12.5px;
+  line-height: 1.85;
+  text-align: justify;
+}
+
+/* EXPERIENCE */
+
+.job {
+  position: relative;
+  padding-left: 19px;
+  border-left: 2px solid #d9ebe7;
+  margin-bottom: 25px;
+}
+
+.job::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--teal);
+  border-radius: 50%;
+  left: -5.5px;
+  top: 5px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.job h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.company {
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.date {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  background: #f0f4f7;
+  padding: 4px 9px;
+  border-radius: 4px;
+  height: fit-content;
+}
+
+.job ul {
+  padding-left: 16px;
+  margin-top: 11px;
+}
+
+.job li {
+  font-size: 11.5px;
+  color: #526176;
+  margin-bottom: 7px;
+  line-height: 1.65;
+}
+
+/* SKILLS */
+
+.skill-group {
+  margin-bottom: 19px;
+}
+
+.skill-group h3 {
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.skill {
+  background: var(--light-teal);
+  color: #176f69;
+  border: 1px solid #d7ece6;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* PROJECT / DOMAIN */
+
+.domain-card {
+  background: #f6f9fb;
+  border: 1px solid var(--line);
+  padding: 13px;
+  border-radius: 7px;
+  margin-bottom: 11px;
+}
+
+.domain-card h3 {
+  font-size: 12px;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.domain-card p {
+  font-size: 10.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* EDUCATION */
+
+.education-item {
+  margin-bottom: 17px;
+}
+
+.education-item h3 {
+  font-size: 12px;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+.education-item p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* STRENGTHS */
+
+.strengths {
+  list-style: none;
+}
+
+.strengths li {
+  position: relative;
+  padding-left: 17px;
+  font-size: 11px;
+  color: #526176;
+  margin-bottom: 9px;
+}
+
+.strengths li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #f5f8fa;
+  border-top: 1px solid var(--line);
+  padding: 17px 45px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.footer strong {
+  color: var(--teal);
+}
+
+/* PRINT BUTTON */
+
+.actions {
+  max-width: 1050px;
+  margin: 0 auto 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.actions button {
+  border: none;
+  background: var(--navy);
+  color: white;
+  padding: 11px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.actions button:hover {
+  background: var(--teal);
+}
+
+.actions .print {
+  background: var(--teal);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 750px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    padding: 35px 25px;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    padding: 30px 25px;
+    gap: 5px;
+  }
+
+  .footer {
+    padding: 17px 25px;
+  }
+}
+
+/* A4 PRINT */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .actions {
+    display: none !important;
+  }
+
+  .resume {
+    width: 210mm;
+    max-width: none;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .header {
+    padding: 32px 42px;
+  }
+
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .content {
+    padding: 27px 38px 30px;
+    gap: 28px;
+  }
+
+  .section {
+    margin-bottom: 24px;
+  }
+
+  .job {
+    break-inside: avoid;
+  }
+
+  .domain-card,
+  .education-item,
+  .skill-group {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+</style>
 </head>
+
 <body>
-    Hello this is deepak
 
-    1. Look for credentials containing github.com.
-2. Find the GitHub credential used by Git, often named git:https://github.com.
-3. Remove that saved credential.
-This forces Git to request authentication again.
-Step 3. Authenticate with your personal GitHub account
-In Git Bash, run:
-git push -u origin main
+<div class="actions">
+  <button onclick="window.print()" class="print">
+    ↓ Download / Print CV
+  </button>
+</div>
 
+<main class="resume">
 
-Git Credential Manager should open a browser authentication window.
-1. Select Sign in with your browser if prompted.
-2. If GitHub is already logged in as Deepak-cyberensic, sign out or switch accounts.
-3. Sign in with deepakbaral.
-4. Authorize Git Credential Manager if requested.
-5. Return to Git Bash.
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-content">
+
+      <div class="eyebrow">
+        Professional Resume / 2026
+      </div>
+
+      <h1>Deepak Baral</h1>
+
+      <div class="designation">
+        Senior QA Engineer
+      </div>
+
+      <p class="header-description">
+        Quality Engineering | Test Automation |
+        API Testing | Performance Testing
+      </p>
+
+      <div class="contact-bar">
+        <span>⌖ Kathmandu, Nepal</span>
+
+        <a href="mailto:deepakbaral8899@gmail.com">
+          ✉ deepakbaral8899@gmail.com
+        </a>
+
+        <a href="https://github.com/deepakbaral"
+           target="_blank">
+          ↗ github.com/deepakbaral
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="content">
+
+    <!-- MAIN COLUMN -->
+    <div class="main-column">
+
+      <!-- SUMMARY -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>01</span> Professional Summary
+        </h2>
+
+        <p class="summary">
+          Senior Software Quality Assurance Engineer with
+          4–6 years of professional QA experience specializing
+          in test automation, API testing, functional testing,
+          regression testing and software quality engineering.
+
+          Hands-on experience with Cypress, Playwright,
+          Selenium, JavaScript, TypeScript and Python.
+          Experienced in developing automated test workflows,
+          applying Page Object Model (POM), validating REST APIs
+          and performing performance testing using Apache JMeter.
+
+          Experienced in testing enterprise applications,
+          Governance, Risk and Compliance (GRC) platforms,
+          AI-powered features, MCP integrations and complex
+          business workflows. Strong understanding of software
+          testing methodologies, defect lifecycle management
+          and data integrity validation.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>02</span> Work Experience
+        </h2>
+
+        <article class="job">
+          <div class="job-header">
+            <div>
+              <h3>Senior QA Engineer</h3>
+              <div class="company">Cyberensic</div>
+            </div>
+            <div class="date">July 2026 – Present</div>
+          </div>
+
+          <ul>
+            <li>
+              Perform functional, regression, integration
+              and end-to-end testing of enterprise applications.
+            </li>
+            <li>
+              Test Governance, Risk and Compliance (GRC)
+              platform functionality and business workflows.
+            </li>
+            <li>
+              Validate Risk Register, Policy Register,
+              Exemptions Register and Asset Register modules.
+            </li>
+            <li>
+              Test organisation onboarding, configuration
+              management and multi-organisation workflows.
+            </li>
+            <li>
+              Validate REST APIs and MCP tool operations,
+              including data integrity and update behaviour.
+            </li>
+            <li>
+              Test AI-powered assistants, AI-generated
+              content and application integrations.
+            </li>
+            <li>
+              Verify dashboard calculations, reporting
+              accuracy and business logic.
+            </li>
+            <li>
+              Identify, reproduce, document and verify
+              software defects.
+            </li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <div>
+              <h3>QA Engineer</h3>
+              <div class="company">Intuji</div>
+            </div>
+            <div class="date">May 2022 – April 2026</div>
+          </div>
+
+          <ul>
+            <li>
+              Developed and maintained automated test
+              scripts using Cypress with JavaScript
+              and TypeScript.
+            </li>
+            <li>
+              Implemented Page Object Model (POM)
+              for organised and maintainable test automation.
+            </li>
+            <li>
+              Performed API testing and validated
+              request and response data.
+            </li>
+            <li>
+              Executed functional, regression, smoke
+              and end-to-end testing.
+            </li>
+            <li>
+              Prepared and maintained test cases
+              based on business requirements.
+            </li>
+            <li>
+              Identified, documented and tracked
+              software defects.
+            </li>
+            <li>
+              Performed UI/UX validation and
+              application workflow testing.
+            </li>
+          </ul>
+        </article>
+
+      </section>
+
+      <!-- DOMAIN -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>03</span> Domain Experience
+        </h2>
+
+        <div class="domain-card">
+          <h3>GRC & Compliance Platforms</h3>
+          <p>
+            Risk Management, Risk Assessment, Policy Management,
+            Compliance Management, Evidence Management,
+            Organisation Onboarding and Audit Workflows.
+          </p>
+        </div>
+
+        <div class="domain-card">
+          <h3>AI & Integration Testing</h3>
+          <p>
+            AI Assistant Testing, MCP Tool Validation,
+            API Update Operations, Data Persistence
+            and AI-generated Content Validation.
+          </p>
+        </div>
+
+        <div class="domain-card">
+          <h3>Enterprise & Web Applications</h3>
+          <p>
+            E-commerce Applications, Enterprise Workflows,
+            Application Integrations, Dashboard Testing
+            and Database-driven Applications.
+          </p>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>04</span> Education
+        </h2>
+
+        <div class="education-item">
+          <h3>
+            Master of Business Administration (MBA)
+          </h3>
+          <p>2020 – 2022</p>
+        </div>
+
+        <div class="education-item">
+          <h3>
+            Bachelor of Science in Computer Science
+            and Information Technology (BSc CSIT)
+          </h3>
+          <p>2014 – 2019</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- SIDE COLUMN -->
+    <aside class="side-column">
+
+      <!-- AUTOMATION -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>05</span> Automation
+        </h2>
+
+        <div class="skill-group">
+          <h3>Automation Frameworks</h3>
+          <div class="skill-tags">
+            <span class="skill">Cypress</span>
+            <span class="skill">Playwright</span>
+            <span class="skill">Selenium</span>
+            <span class="skill">POM</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">Python</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- API -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>06</span> API Testing
+        </h2>
+
+        <div class="skill-tags">
+          <span class="skill">Postman</span>
+          <span class="skill">API Dog</span>
+          <span class="skill">Swagger</span>
+          <span class="skill">REST API</span>
+          <span class="skill">JSON</span>
+          <span class="skill">MCP</span>
+        </div>
+      </section>
+
+      <!-- PERFORMANCE -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>07</span> Performance
+        </h2>
+
+        <div class="skill-tags">
+          <span class="skill">Apache JMeter</span>
+          <span class="skill">Load Testing</span>
+          <span class="skill">Stress Testing</span>
+          <span class="skill">Concurrent Users</span>
+          <span class="skill">Response Analysis</span>
+        </div>
+      </section>
+
+      <!-- DATABASE -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>08</span> Database
+        </h2>
+
+        <div class="skill-tags">
+          <span class="skill">MySQL</span>
+          <span class="skill">phpMyAdmin</span>
+          <span class="skill">CRUD</span>
+          <span class="skill">Data Integrity</span>
+        </div>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>09</span> Tools & Reporting
+        </h2>
+
+        <div class="skill-tags">
+          <span class="skill">Git</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">GitHub Actions</span>
+          <span class="skill">Mochawesome</span>
+          <span class="skill">Allure</span>
+        </div>
+      </section>
+
+      <!-- METHODOLOGY -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>10</span> Methodologies
+        </h2>
+
+        <div class="skill-tags">
+          <span class="skill">Functional</span>
+          <span class="skill">Regression</span>
+          <span class="skill">Smoke</span>
+          <span class="skill">Sanity</span>
+          <span class="skill">Integration</span>
+          <span class="skill">E2E</span>
+          <span class="skill">Exploratory</span>
+          <span class="skill">UI/UX</span>
+        </div>
+      </section>
+
+      <!-- STRENGTHS -->
+      <section class="section">
+        <h2 class="section-heading">
+          <span>11</span> Strengths
+        </h2>
+
+        <ul class="strengths">
+          <li>Analytical Problem Solving</li>
+          <li>Test Planning & Test Design</li>
+          <li>Defect Investigation</li>
+          <li>Automation Development</li>
+          <li>API & Database Validation</li>
+          <li>Data Integrity Testing</li>
+          <li>Requirement Analysis</li>
+          <li>Cross-functional Collaboration</li>
+          <li>SDLC & STLC</li>
+        </ul>
+      </section>
+
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <span><strong>DEEPAK BARAL</strong> | Senior QA Engineer</span>
+    <span>Professional Resume · 2026</span>
+  </footer>
+
+</main>
+
 </body>
 </html>
