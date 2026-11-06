@@ -1,825 +1,608 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Deepak Baral - Senior QA Engineer, Automation, API and Performance Testing">
-<title>Deepak Baral | Senior QA Engineer CV</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Deepak Baral, Senior QA Engineer: test automation, API testing and performance testing.">
+<title>Deepak Baral | Senior QA Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy: #14253d;
-  --teal: #138b83;
-  --light-teal: #e8f5f2;
-  --text: #27364a;
-  --muted: #64748b;
-  --line: #e2e8f0;
-  --white: #ffffff;
+:root{
+  --bg:#f2f4f9; --surface:#ffffff; --surface-2:#e8ecf5;
+  --ink:#18213b; --ink-soft:#4a5573; --muted:#7a849e; --line:#d6dceb;
+  --blue:#2f4fd1; --pass:#178a63; --pass-bg:#e1f4ec; --fail:#c2410c; --warn:#b7791f; --warn-bg:#fbf0d9;
+  --term:#1a2240; --term-ink:#d9def0; --term-muted:#8d97b8;
+  --display:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body:'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Consolas, monospace;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10162a; --surface:#18203a; --surface-2:#212b4a;
+    --ink:#eef1fa; --ink-soft:#b9c1da; --muted:#8892b0; --line:#2c3758;
+    --blue:#8ea4ff; --pass:#4fd1a1; --pass-bg:#16362f; --fail:#fb923c; --warn:#f2c14e; --warn-bg:#3a3020;
+    --term:#0c1122; --term-ink:#d9def0; --term-muted:#7c86a8;
+    color-scheme: dark;
+  }
 }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: #e9eef3;
-  color: var(--text);
-  line-height: 1.6;
-  padding: 35px 15px;
+:root[data-theme="dark"]{
+  --bg:#10162a; --surface:#18203a; --surface-2:#212b4a;
+  --ink:#eef1fa; --ink-soft:#b9c1da; --muted:#8892b0; --line:#2c3758;
+  --blue:#8ea4ff; --pass:#4fd1a1; --pass-bg:#16362f; --fail:#fb923c; --warn:#f2c14e; --warn-bg:#3a3020;
+  --term:#0c1122; --term-ink:#d9def0; --term-muted:#7c86a8;
+  color-scheme: dark;
 }
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
 
-.resume {
-  max-width: 1050px;
-  margin: auto;
-  background: var(--white);
-  box-shadow: 0 20px 65px rgba(15, 35, 60, .12);
-  overflow: hidden;
-}
+/* NAV */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-family:var(--display);font-weight:800;font-size:20px;text-decoration:none;letter-spacing:-.5px}
+.brand span{color:var(--pass)}
+.nav ul{display:flex;gap:4px;list-style:none}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--ink-soft);padding:6px 12px;border-radius:8px;transition:background .2s,color .2s}
+.nav ul a:hover,.nav ul a.active{background:var(--surface-2);color:var(--ink)}
+.theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:17px;flex:none}
+@media (max-width:760px){.nav ul{display:none}}
 
-/* HEADER */
+/* HERO */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,7vw,84px);line-height:.98;letter-spacing:-2.5px}
+.hero .role{font-family:var(--display);font-weight:500;font-size:clamp(21px,2.4vw,26px);color:var(--ink-soft);margin-top:14px}
+.hero p.lede{margin-top:22px;max-width:46ch;color:var(--ink-soft)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--body);padding:12px 20px;border-radius:10px;text-decoration:none;cursor:pointer;border:1.5px solid var(--ink);transition:transform .15s,background .2s,color .2s}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.where{margin-top:26px;font-size:15px;color:var(--muted)}
 
-.header {
-  background: var(--navy);
-  color: white;
-  padding: 48px 55px 42px;
-  position: relative;
-  overflow: hidden;
-}
+/* TEST RUNNER */
+.runner{background:var(--term);color:var(--term-ink);border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(10,20,60,.55);font-family:var(--mono);font-size:13.5px}
+.runner-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.dots{display:flex;gap:7px}.dots i{width:11px;height:11px;border-radius:50%;background:#3a4570;display:block}
+.runner-title{color:var(--term-muted);font-size:12.5px}
+.rerun{font:600 12px var(--mono);background:rgba(79,209,161,.14);color:#4fd1a1;border:1px solid rgba(79,209,161,.35);border-radius:6px;padding:5px 10px;cursor:pointer}
+.rerun:disabled{opacity:.45;cursor:default}
+.runner-body{padding:18px 18px 8px;min-height:356px}
+.cmd{color:var(--term-muted);margin-bottom:12px}
+.cmd b{color:#8ea4ff;font-weight:400}
+.suite{color:#fff;margin:10px 0 6px;font-weight:600;opacity:0;transition:opacity .25s}
+.spec{display:flex;gap:10px;align-items:baseline;width:100%;text-align:left;background:none;border:0;color:var(--term-ink);font:inherit;padding:5px 8px;margin-left:-8px;border-radius:6px;cursor:pointer;opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s,background .2s}
+.spec:hover{background:rgba(255,255,255,.06)}
+.spec .mark{width:14px;flex:none;color:var(--term-muted)}
+.spec.pass .mark{color:#4fd1a1}
+.spec .ms{margin-left:auto;color:var(--term-muted);font-size:12px;flex:none;padding-left:10px}
+.shown{opacity:1!important;transform:none!important}
+.summary-line{padding:12px 18px 16px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--term-muted)}
+.summary-line .ok{color:#4fd1a1}
+.hint{font-family:var(--body);font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
 
-.header::after {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border: 45px solid rgba(255,255,255,.045);
-  border-radius: 50%;
-  right: -80px;
-  top: -140px;
-}
+/* SECTIONS */
+section.block{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,4.4vw,48px);letter-spacing:-1.2px;line-height:1.05}
+.sec-head p{color:var(--ink-soft);max-width:44ch}
 
-.header-content {
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow {
-  color: #65d6c4;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 13px;
-}
-
-.header h1 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 43px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.2;
-}
-
-.designation {
-  color: #a8e5db;
-  font-size: 17px;
-  font-weight: 600;
-  margin-top: 8px;
-}
-
-.header-description {
-  max-width: 700px;
-  color: #c2cedd;
-  font-size: 13px;
-  margin-top: 19px;
-}
-
-.contact-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 27px;
-  margin-top: 25px;
-  font-size: 12px;
-  color: #d6e1ed;
-}
-
-.contact-bar a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.contact-bar a:hover {
-  color: #65d6c4;
-}
-
-/* LAYOUT */
-
-.content {
-  display: grid;
-  grid-template-columns: 1.65fr 1fr;
-  gap: 38px;
-  padding: 38px 48px 50px;
-}
-
-.main-column,
-.side-column {
-  min-width: 0;
-}
-
-.section {
-  margin-bottom: 32px;
-}
-
-.section-heading {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  margin-bottom: 17px;
-}
-
-.section-heading::after {
-  content: "";
-  height: 2px;
-  background: var(--line);
-  flex: 1;
-}
-
-.section-heading span {
-  color: var(--teal);
-}
-
-.summary {
-  color: #526176;
-  font-size: 12.5px;
-  line-height: 1.85;
-  text-align: justify;
-}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.about-grid .text p{color:var(--ink-soft);max-width:62ch}
+.about-grid .text p+p{margin-top:16px}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px 22px}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.facts div:last-child{border:0}
+.facts dt{color:var(--muted)}
+.facts dd{font-weight:600;text-align:right}
 
 /* EXPERIENCE */
-
-.job {
-  position: relative;
-  padding-left: 19px;
-  border-left: 2px solid #d9ebe7;
-  margin-bottom: 25px;
-}
-
-.job::before {
-  content: "";
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  background: var(--teal);
-  border-radius: 50%;
-  left: -5.5px;
-  top: 5px;
-}
-
-.job-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.job h3 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--navy);
-}
-
-.company {
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 700;
-  margin-top: 2px;
-}
-
-.date {
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 600;
-  background: #f0f4f7;
-  padding: 4px 9px;
-  border-radius: 4px;
-  height: fit-content;
-}
-
-.job ul {
-  padding-left: 16px;
-  margin-top: 11px;
-}
-
-.job li {
-  font-size: 11.5px;
-  color: #526176;
-  margin-bottom: 7px;
-  line-height: 1.65;
-}
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.job{position:relative;margin-bottom:18px}
+.job::before{content:"";position:absolute;left:-29px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--pass)}
+.job.past::before{border-color:var(--muted)}
+.job-toggle{width:100%;display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;cursor:pointer;color:var(--ink);font:inherit;transition:border-color .2s}
+.job-toggle:hover{border-color:var(--ink-soft)}
+.job-toggle h3{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.4px}
+.job-toggle .co{color:var(--pass);font-weight:600;font-size:15px}
+.job-toggle .when{font-size:14px;color:var(--muted);white-space:nowrap}
+.chev{width:30px;height:30px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;transition:transform .3s;font-size:13px}
+.job.open .chev{transform:rotate(180deg)}
+.job-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.job.open .job-body{grid-template-rows:1fr}
+.job-body>div{overflow:hidden}
+.job-body ul{list-style:none;padding:18px 22px 6px;display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+.job-body li{position:relative;padding-left:22px;color:var(--ink-soft);font-size:15.5px}
+.job-body li::before{content:"✓";position:absolute;left:0;color:var(--pass);font-weight:700}
+@media (max-width:760px){.job-toggle{grid-template-columns:1fr auto}.job-toggle .when{grid-column:1;grid-row:2}.chev{grid-row:1/3;grid-column:2}.job-body ul{grid-template-columns:1fr}}
 
 /* SKILLS */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filter{font:600 14px var(--body);padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink-soft);cursor:pointer;transition:all .2s}
+.filter[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.skill-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-size:15.5px;font-weight:500;padding:10px 16px;border-radius:10px;background:var(--surface);border:1px solid var(--line);transition:opacity .3s,transform .3s,background .3s,border-color .3s}
+.chip.on{background:var(--pass-bg);border-color:var(--pass);color:var(--ink)}
+.chip.dim{opacity:.28;transform:scale(.97)}
+.skill-note{margin-top:22px;color:var(--muted);font-size:15px;min-height:1.6em}
 
-.skill-group {
-  margin-bottom: 19px;
-}
+/* BUG REPORT DEMO */
+.bug-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:start}
+.bug-grid .text p{color:var(--ink-soft);max-width:48ch}
+.bug-grid .text p+p{margin-top:14px}
+.report{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.report-title{padding:18px 22px;font-family:var(--mono);font-size:14px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.sev{font:600 12px var(--body);background:var(--warn-bg);color:var(--warn);padding:3px 9px;border-radius:999px}
+.tabs{display:flex;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{flex:1;min-width:max-content;font:600 14px var(--body);padding:13px 16px;background:none;border:0;border-bottom:2.5px solid transparent;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--blue)}
+.panel{padding:22px;min-height:190px;font-size:15.5px;color:var(--ink-soft)}
+.panel[hidden]{display:none}
+.panel ol,.panel ul{padding-left:20px}
+.panel li+li{margin-top:6px}
+.panel .row{display:grid;grid-template-columns:90px 1fr;gap:12px;padding:8px 0}
+.panel .row b{color:var(--ink)}
+.cur{color:var(--fail)} .exp{color:var(--pass)}
 
-.skill-group h3 {
-  color: var(--navy);
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 9px;
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.skill {
-  background: var(--light-teal);
-  color: #176f69;
-  border: 1px solid #d7ece6;
-  border-radius: 4px;
-  padding: 5px 9px;
-  font-size: 10px;
-  font-weight: 600;
-}
-
-/* PROJECT / DOMAIN */
-
-.domain-card {
-  background: #f6f9fb;
-  border: 1px solid var(--line);
-  padding: 13px;
-  border-radius: 7px;
-  margin-bottom: 11px;
-}
-
-.domain-card h3 {
-  font-size: 12px;
-  color: var(--navy);
-  margin-bottom: 5px;
-}
-
-.domain-card p {
-  font-size: 10.5px;
-  color: var(--muted);
-  line-height: 1.7;
-}
+/* DOMAINS */
+.domains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.domain{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;transition:transform .2s,border-color .2s}
+.domain:hover{transform:translateY(-4px);border-color:var(--blue)}
+.domain .ico{font-size:28px}
+.domain h3{font-family:var(--display);font-size:21px;margin:14px 0 8px;letter-spacing:-.3px}
+.domain p{color:var(--ink-soft);font-size:15.5px}
+@media (max-width:860px){.domains{grid-template-columns:1fr}}
 
 /* EDUCATION */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.edu-item{border-left:3px solid var(--blue);padding:4px 0 4px 20px}
+.edu-item h3{font-family:var(--display);font-size:20px;letter-spacing:-.3px;line-height:1.25}
+.edu-item p{color:var(--muted);margin-top:4px}
+@media (max-width:700px){.edu{grid-template-columns:1fr}}
 
-.education-item {
-  margin-bottom: 17px;
+/* CONTACT */
+.contact{background:var(--ink);color:var(--bg);border-radius:22px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center}
+.contact h2{color:var(--bg)}
+.contact p{opacity:.78;margin-top:14px;max-width:44ch}
+.contact-actions{display:flex;flex-direction:column;gap:12px}
+.contact .btn{border-color:var(--bg);justify-content:center}
+.contact .btn.primary{background:var(--bg);color:var(--ink)}
+.contact .btn.ghost{color:var(--bg)}
+@media (max-width:760px){.contact{grid-template-columns:1fr;padding:36px 26px}}
+
+footer{padding:36px 0 44px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--pass);color:#fff;font-weight:600;font-size:15px;padding:12px 20px;border-radius:10px;opacity:0;pointer-events:none;transition:all .3s;z-index:20}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:900px){
+  .hero .wrap,.about-grid,.bug-grid{grid-template-columns:1fr}
+  .hero{padding-top:44px}
 }
-
-.education-item h3 {
-  font-size: 12px;
-  color: var(--navy);
-  line-height: 1.5;
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
 }
-
-.education-item p {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 3px;
-}
-
-/* STRENGTHS */
-
-.strengths {
-  list-style: none;
-}
-
-.strengths li {
-  position: relative;
-  padding-left: 17px;
-  font-size: 11px;
-  color: #526176;
-  margin-bottom: 9px;
-}
-
-.strengths li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--teal);
-  font-weight: 800;
-}
-
-/* FOOTER */
-
-.footer {
-  background: #f5f8fa;
-  border-top: 1px solid var(--line);
-  padding: 17px 45px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  color: var(--muted);
-  font-size: 10px;
-}
-
-.footer strong {
-  color: var(--teal);
-}
-
-/* PRINT BUTTON */
-
-.actions {
-  max-width: 1050px;
-  margin: 0 auto 18px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.actions button {
-  border: none;
-  background: var(--navy);
-  color: white;
-  padding: 11px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.actions button:hover {
-  background: var(--teal);
-}
-
-.actions .print {
-  background: var(--teal);
-}
-
-/* RESPONSIVE */
-
-@media(max-width: 750px) {
-  body {
-    padding: 10px;
-  }
-
-  .header {
-    padding: 35px 25px;
-  }
-
-  .header h1 {
-    font-size: 34px;
-  }
-
-  .content {
-    grid-template-columns: 1fr;
-    padding: 30px 25px;
-    gap: 5px;
-  }
-
-  .footer {
-    padding: 17px 25px;
-  }
-}
-
-/* A4 PRINT */
-
-@page {
-  size: A4;
-  margin: 0;
-}
-
-@media print {
-  body {
-    padding: 0;
-    background: white;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  .actions {
-    display: none !important;
-  }
-
-  .resume {
-    width: 210mm;
-    max-width: none;
-    margin: 0;
-    box-shadow: none;
-  }
-
-  .header {
-    padding: 32px 42px;
-  }
-
-  .header h1 {
-    font-size: 36px;
-  }
-
-  .content {
-    padding: 27px 38px 30px;
-    gap: 28px;
-  }
-
-  .section {
-    margin-bottom: 24px;
-  }
-
-  .job {
-    break-inside: avoid;
-  }
-
-  .domain-card,
-  .education-item,
-  .skill-group {
-    break-inside: avoid;
-  }
-
-  a {
-    text-decoration: none;
-  }
+@media print{
+  .nav,.theme-btn,.rerun,.hint,.toast{display:none!important}
 }
 </style>
 </head>
-
 <body>
 
-<div class="actions">
-  <button onclick="window.print()" class="print">
-    ↓ Download / Print CV
-  </button>
-</div>
-
-<main class="resume">
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-content">
-
-      <div class="eyebrow">
-        Professional Resume / 2026
-      </div>
-
-      <h1>Deepak Baral</h1>
-
-      <div class="designation">
-        Senior QA Engineer
-      </div>
-
-      <p class="header-description">
-        Quality Engineering | Test Automation |
-        API Testing | Performance Testing
-      </p>
-
-      <div class="contact-bar">
-        <span>⌖ Kathmandu, Nepal</span>
-
-        <a href="mailto:deepakbaral8899@gmail.com">
-          ✉ deepakbaral8899@gmail.com
-        </a>
-
-        <a href="https://github.com/deepakbaral"
-           target="_blank">
-          ↗ github.com/deepakbaral
-        </a>
-      </div>
-
-    </div>
-  </header>
-
-  <div class="content">
-
-    <!-- MAIN COLUMN -->
-    <div class="main-column">
-
-      <!-- SUMMARY -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>01</span> Professional Summary
-        </h2>
-
-        <p class="summary">
-          Senior Software Quality Assurance Engineer with
-          4–6 years of professional QA experience specializing
-          in test automation, API testing, functional testing,
-          regression testing and software quality engineering.
-
-          Hands-on experience with Cypress, Playwright,
-          Selenium, JavaScript, TypeScript and Python.
-          Experienced in developing automated test workflows,
-          applying Page Object Model (POM), validating REST APIs
-          and performing performance testing using Apache JMeter.
-
-          Experienced in testing enterprise applications,
-          Governance, Risk and Compliance (GRC) platforms,
-          AI-powered features, MCP integrations and complex
-          business workflows. Strong understanding of software
-          testing methodologies, defect lifecycle management
-          and data integrity validation.
-        </p>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>02</span> Work Experience
-        </h2>
-
-        <article class="job">
-          <div class="job-header">
-            <div>
-              <h3>Senior QA Engineer</h3>
-              <div class="company">Cyberensic</div>
-            </div>
-            <div class="date">July 2026 – Present</div>
-          </div>
-
-          <ul>
-            <li>
-              Perform functional, regression, integration
-              and end-to-end testing of enterprise applications.
-            </li>
-            <li>
-              Test Governance, Risk and Compliance (GRC)
-              platform functionality and business workflows.
-            </li>
-            <li>
-              Validate Risk Register, Policy Register,
-              Exemptions Register and Asset Register modules.
-            </li>
-            <li>
-              Test organisation onboarding, configuration
-              management and multi-organisation workflows.
-            </li>
-            <li>
-              Validate REST APIs and MCP tool operations,
-              including data integrity and update behaviour.
-            </li>
-            <li>
-              Test AI-powered assistants, AI-generated
-              content and application integrations.
-            </li>
-            <li>
-              Verify dashboard calculations, reporting
-              accuracy and business logic.
-            </li>
-            <li>
-              Identify, reproduce, document and verify
-              software defects.
-            </li>
-          </ul>
-        </article>
-
-        <article class="job">
-          <div class="job-header">
-            <div>
-              <h3>QA Engineer</h3>
-              <div class="company">Intuji</div>
-            </div>
-            <div class="date">May 2022 – April 2026</div>
-          </div>
-
-          <ul>
-            <li>
-              Developed and maintained automated test
-              scripts using Cypress with JavaScript
-              and TypeScript.
-            </li>
-            <li>
-              Implemented Page Object Model (POM)
-              for organised and maintainable test automation.
-            </li>
-            <li>
-              Performed API testing and validated
-              request and response data.
-            </li>
-            <li>
-              Executed functional, regression, smoke
-              and end-to-end testing.
-            </li>
-            <li>
-              Prepared and maintained test cases
-              based on business requirements.
-            </li>
-            <li>
-              Identified, documented and tracked
-              software defects.
-            </li>
-            <li>
-              Performed UI/UX validation and
-              application workflow testing.
-            </li>
-          </ul>
-        </article>
-
-      </section>
-
-      <!-- DOMAIN -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>03</span> Domain Experience
-        </h2>
-
-        <div class="domain-card">
-          <h3>GRC & Compliance Platforms</h3>
-          <p>
-            Risk Management, Risk Assessment, Policy Management,
-            Compliance Management, Evidence Management,
-            Organisation Onboarding and Audit Workflows.
-          </p>
-        </div>
-
-        <div class="domain-card">
-          <h3>AI & Integration Testing</h3>
-          <p>
-            AI Assistant Testing, MCP Tool Validation,
-            API Update Operations, Data Persistence
-            and AI-generated Content Validation.
-          </p>
-        </div>
-
-        <div class="domain-card">
-          <h3>Enterprise & Web Applications</h3>
-          <p>
-            E-commerce Applications, Enterprise Workflows,
-            Application Integrations, Dashboard Testing
-            and Database-driven Applications.
-          </p>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>04</span> Education
-        </h2>
-
-        <div class="education-item">
-          <h3>
-            Master of Business Administration (MBA)
-          </h3>
-          <p>2020 – 2022</p>
-        </div>
-
-        <div class="education-item">
-          <h3>
-            Bachelor of Science in Computer Science
-            and Information Technology (BSc CSIT)
-          </h3>
-          <p>2014 – 2019</p>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- SIDE COLUMN -->
-    <aside class="side-column">
-
-      <!-- AUTOMATION -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>05</span> Automation
-        </h2>
-
-        <div class="skill-group">
-          <h3>Automation Frameworks</h3>
-          <div class="skill-tags">
-            <span class="skill">Cypress</span>
-            <span class="skill">Playwright</span>
-            <span class="skill">Selenium</span>
-            <span class="skill">POM</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Programming</h3>
-          <div class="skill-tags">
-            <span class="skill">JavaScript</span>
-            <span class="skill">TypeScript</span>
-            <span class="skill">Python</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- API -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>06</span> API Testing
-        </h2>
-
-        <div class="skill-tags">
-          <span class="skill">Postman</span>
-          <span class="skill">API Dog</span>
-          <span class="skill">Swagger</span>
-          <span class="skill">REST API</span>
-          <span class="skill">JSON</span>
-          <span class="skill">MCP</span>
-        </div>
-      </section>
-
-      <!-- PERFORMANCE -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>07</span> Performance
-        </h2>
-
-        <div class="skill-tags">
-          <span class="skill">Apache JMeter</span>
-          <span class="skill">Load Testing</span>
-          <span class="skill">Stress Testing</span>
-          <span class="skill">Concurrent Users</span>
-          <span class="skill">Response Analysis</span>
-        </div>
-      </section>
-
-      <!-- DATABASE -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>08</span> Database
-        </h2>
-
-        <div class="skill-tags">
-          <span class="skill">MySQL</span>
-          <span class="skill">phpMyAdmin</span>
-          <span class="skill">CRUD</span>
-          <span class="skill">Data Integrity</span>
-        </div>
-      </section>
-
-      <!-- TOOLS -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>09</span> Tools & Reporting
-        </h2>
-
-        <div class="skill-tags">
-          <span class="skill">Git</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">GitHub Actions</span>
-          <span class="skill">Mochawesome</span>
-          <span class="skill">Allure</span>
-        </div>
-      </section>
-
-      <!-- METHODOLOGY -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>10</span> Methodologies
-        </h2>
-
-        <div class="skill-tags">
-          <span class="skill">Functional</span>
-          <span class="skill">Regression</span>
-          <span class="skill">Smoke</span>
-          <span class="skill">Sanity</span>
-          <span class="skill">Integration</span>
-          <span class="skill">E2E</span>
-          <span class="skill">Exploratory</span>
-          <span class="skill">UI/UX</span>
-        </div>
-      </section>
-
-      <!-- STRENGTHS -->
-      <section class="section">
-        <h2 class="section-heading">
-          <span>11</span> Strengths
-        </h2>
-
-        <ul class="strengths">
-          <li>Analytical Problem Solving</li>
-          <li>Test Planning & Test Design</li>
-          <li>Defect Investigation</li>
-          <li>Automation Development</li>
-          <li>API & Database Validation</li>
-          <li>Data Integrity Testing</li>
-          <li>Requirement Analysis</li>
-          <li>Cross-functional Collaboration</li>
-          <li>SDLC & STLC</li>
-        </ul>
-      </section>
-
-    </aside>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">DB<span>.</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#bugs">How I report</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" aria-label="Switch colour theme">◐</button>
   </div>
+</nav>
 
-  <footer class="footer">
-    <span><strong>DEEPAK BARAL</strong> | Senior QA Engineer</span>
-    <span>Professional Resume · 2026</span>
-  </footer>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Deepak Baral</h1>
+      <div class="role">Senior QA Engineer</div>
+      <p class="lede">I break software on purpose so your users never do it by accident. Test automation with Cypress and Playwright, API and MCP validation, and performance testing for enterprise and GRC platforms.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#experience">See my work</a>
+      </div>
+      <p class="where">Kathmandu, Nepal. Open to remote QA roles.</p>
+    </div>
 
-</main>
+    <div>
+      <div class="runner" role="region" aria-label="Animated test run summarising my profile">
+        <div class="runner-bar">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <span class="runner-title">deepak.cy.ts</span>
+          <button class="rerun" id="rerun" disabled>Run again</button>
+        </div>
+        <div class="runner-body" id="runnerBody">
+          <div class="cmd">$ npx cypress run <b>--spec deepak.cy.ts</b></div>
+        </div>
+        <div class="summary-line" id="summary">
+          <span>Tests: <b id="tCount">0</b></span>
+          <span class="ok">Passing: <b id="pCount">0</b></span>
+          <span>Failing: 0</span>
+          <span>Duration: <b id="dur">0</b> ms</span>
+        </div>
+      </div>
+      <p class="hint">Click any passing test to jump to the proof.</p>
+    </div>
+  </div>
+</header>
 
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head"><h2>About me</h2></div>
+    <div class="about-grid">
+      <div class="text">
+        <p>I’m a Senior QA Engineer with over four years of hands-on experience in test automation, API testing, functional and regression testing, and software quality engineering.</p>
+        <p>I write automated tests in Cypress, Playwright and Selenium using JavaScript, TypeScript and Python, structured with the Page Object Model so suites stay readable as products grow. I validate REST APIs and MCP tool operations, and run load and stress tests with Apache JMeter.</p>
+        <p>Most of my recent work is on Governance, Risk and Compliance platforms: risk registers, policy and asset management, AI-powered assistants and complex multi-organisation workflows, where data integrity really matters.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Senior QA Engineer</dd></div>
+        <div><dt>Current company</dt><dd>Cyberensic</dd></div>
+        <div><dt>Experience</dt><dd>4+ years</dd></div>
+        <div><dt>Focus</dt><dd>Automation, API, Performance</dd></div>
+        <div><dt>Domain</dt><dd>GRC and enterprise apps</dd></div>
+        <div><dt>Location</dt><dd>Kathmandu, Nepal</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Experience</h2>
+      <p>Click a role to see what I did there.</p>
+    </div>
+    <div class="timeline">
+      <article class="job open">
+        <button class="job-toggle" aria-expanded="true">
+          <div><h3>Senior QA Engineer</h3><div class="co">Cyberensic</div></div>
+          <span class="when">July 2026 – Present</span>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="job-body"><div><ul>
+          <li>Functional, regression, integration and end-to-end testing of enterprise applications</li>
+          <li>Testing GRC platform functionality and business workflows</li>
+          <li>Validating Risk, Policy, Exemptions and Asset Register modules</li>
+          <li>Testing organisation onboarding, configuration and multi-organisation workflows</li>
+          <li>Validating REST APIs and MCP tool operations, including data integrity and updates</li>
+          <li>Testing AI-powered assistants, AI-generated content and integrations</li>
+          <li>Verifying dashboard calculations, reporting accuracy and business logic</li>
+          <li>Reproducing, documenting and verifying defects end to end</li>
+        </ul></div></div>
+      </article>
+      <article class="job past">
+        <button class="job-toggle" aria-expanded="false">
+          <div><h3>QA Engineer</h3><div class="co">Intuji</div></div>
+          <span class="when">May 2022 – April 2026</span>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="job-body"><div><ul>
+          <li>Built and maintained Cypress test suites in JavaScript and TypeScript</li>
+          <li>Implemented the Page Object Model for maintainable automation</li>
+          <li>API testing and request and response data validation</li>
+          <li>Functional, regression, smoke and end-to-end testing</li>
+          <li>Writing and maintaining test cases from business requirements</li>
+          <li>Identifying, documenting and tracking defects</li>
+          <li>UI/UX validation and application workflow testing</li>
+        </ul></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Skills and tools</h2>
+      <p>Pick an area to highlight the tools I use for it.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter skills">
+      <button class="filter" aria-pressed="true" data-f="all">Everything</button>
+      <button class="filter" aria-pressed="false" data-f="auto">Automation</button>
+      <button class="filter" aria-pressed="false" data-f="api">API testing</button>
+      <button class="filter" aria-pressed="false" data-f="perf">Performance</button>
+      <button class="filter" aria-pressed="false" data-f="data">Database</button>
+      <button class="filter" aria-pressed="false" data-f="tools">CI and reporting</button>
+      <button class="filter" aria-pressed="false" data-f="method">Testing types</button>
+    </div>
+    <div class="skill-cloud" id="cloud">
+      <span class="chip" data-c="auto">Cypress</span>
+      <span class="chip" data-c="auto">Playwright</span>
+      <span class="chip" data-c="auto">Selenium</span>
+      <span class="chip" data-c="auto">Page Object Model</span>
+      <span class="chip" data-c="auto">JavaScript</span>
+      <span class="chip" data-c="auto">TypeScript</span>
+      <span class="chip" data-c="auto">Python</span>
+      <span class="chip" data-c="api">Postman</span>
+      <span class="chip" data-c="api">Apidog</span>
+      <span class="chip" data-c="api">Swagger</span>
+      <span class="chip" data-c="api">REST APIs</span>
+      <span class="chip" data-c="api">JSON</span>
+      <span class="chip" data-c="api">MCP</span>
+      <span class="chip" data-c="perf">Apache JMeter</span>
+      <span class="chip" data-c="perf">Load testing</span>
+      <span class="chip" data-c="perf">Stress testing</span>
+      <span class="chip" data-c="perf">Concurrent users</span>
+      <span class="chip" data-c="perf">Response analysis</span>
+      <span class="chip" data-c="data">MySQL</span>
+      <span class="chip" data-c="data">phpMyAdmin</span>
+      <span class="chip" data-c="data">CRUD validation</span>
+      <span class="chip" data-c="data">Data integrity</span>
+      <span class="chip" data-c="tools">Git</span>
+      <span class="chip" data-c="tools">GitHub</span>
+      <span class="chip" data-c="tools">GitHub Actions</span>
+      <span class="chip" data-c="tools">Mochawesome</span>
+      <span class="chip" data-c="tools">Allure</span>
+      <span class="chip" data-c="method">Functional</span>
+      <span class="chip" data-c="method">Regression</span>
+      <span class="chip" data-c="method">Smoke</span>
+      <span class="chip" data-c="method">Sanity</span>
+      <span class="chip" data-c="method">Integration</span>
+      <span class="chip" data-c="method">End-to-end</span>
+      <span class="chip" data-c="method">Exploratory</span>
+      <span class="chip" data-c="method">UI/UX</span>
+    </div>
+    <p class="skill-note" id="skillNote" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="block" id="bugs">
+  <div class="wrap bug-grid">
+    <div class="text">
+      <h2>How I report bugs</h2>
+      <p style="margin-top:20px">A good bug report saves a developer an hour. Mine follow one format: a searchable title, exact steps, what happens against what should happen, the impact, and a suggested fix.</p>
+      <p>I also list what I confirmed still works, so the fix stays focused and nobody argues about scope. Click through the sample on the right.</p>
+    </div>
+    <div class="report">
+      <div class="report-title">Checkout || Coupon Code || Discount applied twice after page refresh <span class="sev">Major</span></div>
+      <div class="tabs" role="tablist" aria-label="Sample bug report sections">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">Steps</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1">Behaviour</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1">Impact and fix</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4" tabindex="-1">Confirmed working</button>
+      </div>
+      <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+        <ol>
+          <li>Add any item to the cart and open Checkout.</li>
+          <li>Apply coupon SAVE10.</li>
+          <li>Refresh the page.</li>
+          <li>Check the order total.</li>
+        </ol>
+      </div>
+      <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+        <div class="row"><b>Current</b><span class="cur">The 10% discount is applied again after refresh, giving 20% off.</span></div>
+        <div class="row"><b>Expected</b><span class="exp">The discount is applied once and stays at 10% after refresh.</span></div>
+      </div>
+      <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+        <div class="row"><b>Impact</b><span>Customers can stack discounts by refreshing, which causes direct revenue loss.</span></div>
+        <div class="row"><b>Fix</b><span>Check whether the coupon is already on the cart server-side before applying it.</span></div>
+      </div>
+      <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+        <ul>
+          <li>Coupon applies correctly the first time.</li>
+          <li>Invalid coupons show the correct error.</li>
+          <li>Removing the coupon restores the full price.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="domains">
+  <div class="wrap">
+    <div class="sec-head"><h2>Where I’ve tested</h2></div>
+    <div class="domains">
+      <div class="domain">
+        <div class="ico" aria-hidden="true">🛡️</div>
+        <h3>GRC and compliance</h3>
+        <p>Risk management and assessment, policy and compliance management, evidence management, organisation onboarding and audit workflows.</p>
+      </div>
+      <div class="domain">
+        <div class="ico" aria-hidden="true">🤖</div>
+        <h3>AI and integrations</h3>
+        <p>AI assistant testing, MCP tool validation, API update operations, data persistence and checking AI-generated content.</p>
+      </div>
+      <div class="domain">
+        <div class="ico" aria-hidden="true">🛒</div>
+        <h3>Enterprise and web apps</h3>
+        <p>E-commerce, enterprise workflows, application integrations, dashboards and database-driven applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="education">
+  <div class="wrap">
+    <div class="sec-head"><h2>Education</h2></div>
+    <div class="edu">
+      <div class="edu-item"><h3>Master of Business Administration (MBA)</h3><p>2020 – 2022</p></div>
+      <div class="edu-item"><h3>BSc in Computer Science and Information Technology (CSIT)</h3><p>2014 – 2019</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact" style="border-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Let’s work together</h2>
+        <p>Looking for a QA engineer who automates the boring parts and digs into the tricky ones? Send me a message.</p>
+      </div>
+      <div class="contact-actions">
+        <button class="btn primary" id="copyEmail">Copy email address</button>
+        <a class="btn ghost" href="mailto:deepakbaral8899@gmail.com">Send an email</a>
+        <a class="btn ghost" href="https://github.com/deepakbaral" target="_blank" rel="noopener">View GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Deepak Baral</span>
+    <span>deepakbaral8899@gmail.com</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  /* Theme */
+  const root=document.documentElement, themeBtn=document.getElementById('themeBtn');
+  let saved=null; try{saved=localStorage.getItem('theme')}catch(e){}
+  if(saved) root.dataset.theme=saved;
+  themeBtn.addEventListener('click',()=>{
+    const dark = root.dataset.theme ? root.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+  });
+
+  /* Test runner */
+  const suites=[
+    {name:'Deepak Baral',specs:[
+      ['works as a Senior QA Engineer at Cyberensic','experience'],
+      ['has 4+ years of hands-on QA experience','about'],
+      ['writes Cypress, Playwright and Selenium tests','skills'],
+      ['validates REST APIs and MCP tool operations','skills'],
+      ['load tests with Apache JMeter','skills'],
+      ['tests GRC platforms and AI assistants','domains'],
+      ['writes bug reports developers can act on','bugs'],
+      ['is open to new opportunities','contact']
+    ]}
+  ];
+  const body=document.getElementById('runnerBody'), rerun=document.getElementById('rerun');
+  const tC=document.getElementById('tCount'), pC=document.getElementById('pCount'), dur=document.getElementById('dur');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sleep=ms=>new Promise(r=>setTimeout(r,reduce?0:ms));
+
+  async function run(){
+    rerun.disabled=true;
+    body.querySelectorAll('.suite,.spec').forEach(n=>n.remove());
+    tC.textContent=0; pC.textContent=0; dur.textContent=0;
+    let total=0, time=0;
+    for(const s of suites){
+      const h=document.createElement('div'); h.className='suite'; h.textContent=s.name; body.appendChild(h);
+      await sleep(60); h.classList.add('shown');
+      for(const [text,target] of s.specs){
+        const b=document.createElement('button');
+        b.className='spec'; b.type='button';
+        b.innerHTML='<span class="mark">○</span><span class="txt"></span><span class="ms"></span>';
+        b.querySelector('.txt').textContent=text;
+        b.addEventListener('click',()=>document.getElementById(target).scrollIntoView({behavior:reduce?'auto':'smooth'}));
+        body.appendChild(b);
+        await sleep(40); b.classList.add('shown');
+        await sleep(260+Math.random()*220);
+        const ms=Math.round(40+Math.random()*180); time+=ms; total++;
+        b.classList.add('pass'); b.querySelector('.mark').textContent='✓';
+        b.querySelector('.ms').textContent=ms+'ms';
+        tC.textContent=total; pC.textContent=total; dur.textContent=time;
+      }
+    }
+    rerun.disabled=false;
+  }
+  rerun.addEventListener('click',run);
+  run();
+
+  /* Experience accordion */
+  document.querySelectorAll('.job-toggle').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const job=btn.closest('.job'); const open=job.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+  });
+
+  /* Skills filter */
+  const notes={
+    all:'Everything I use across automation, APIs, performance, data and reporting.',
+    auto:'Automation suites built with the Page Object Model so they stay easy to maintain.',
+    api:'Checking request and response data, status codes and how updates persist.',
+    perf:'Finding how an app behaves under load before real users do.',
+    data:'Confirming what the UI shows matches what is actually stored.',
+    tools:'Running tests in CI and sharing clear reports with the team.',
+    method:'The types of testing I plan and run across a release.'
+  };
+  const chips=[...document.querySelectorAll('.chip')], note=document.getElementById('skillNote');
+  function applyFilter(f){
+    document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));
+    chips.forEach(c=>{
+      const match=f==='all'||c.dataset.c===f;
+      c.classList.toggle('on',match&&f!=='all');
+      c.classList.toggle('dim',!match);
+    });
+    note.textContent=notes[f];
+  }
+  document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.f)));
+  applyFilter('all');
+
+  /* Bug report tabs */
+  const tabs=[...document.querySelectorAll('.tab')];
+  function select(tab){
+    tabs.forEach(t=>{
+      const on=t===tab;
+      t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+    });
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>select(t));
+    t.addEventListener('keydown',e=>{
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+        const n=tabs[(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length];
+        select(n); n.focus();
+      }
+    });
+  });
+
+  /* Active nav link */
+  const links=[...document.querySelectorAll('.nav ul a')];
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+en.target.id));
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  ['about','experience','skills','bugs','contact'].forEach(id=>{const el=document.getElementById(id); if(el) io.observe(el);});
+
+  /* Copy email */
+  const toast=document.getElementById('toast');
+  function show(msg){toast.textContent=msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2200);}
+  document.getElementById('copyEmail').addEventListener('click',async()=>{
+    const email='deepakbaral8899@gmail.com';
+    try{await navigator.clipboard.writeText(email); show('Email copied');}
+    catch(e){show(email);}
+  });
+})();
+</script>
 </body>
 </html>
